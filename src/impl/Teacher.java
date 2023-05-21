@@ -6,6 +6,9 @@ import interfaces.Team;
 import interfaces.Test;
 import people.People;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Teacher extends People implements Team, Test, Screen, ManualJob {
 
     private int salary;
@@ -26,7 +29,7 @@ public class Teacher extends People implements Team, Test, Screen, ManualJob {
 
     @Override
     public void makesManualJob() {
-        System.out.println("when i do crafts with my students, thats manual job right? ");
+        System.out.println("when i do crafts in " + country + " with my students, thats manual job right? ");
 
     }
 
@@ -63,4 +66,6 @@ public class Teacher extends People implements Team, Test, Screen, ManualJob {
         System.out.println("all "+ colleagues +" of my colleagues are fat whores");
 
     }
+
+
 }

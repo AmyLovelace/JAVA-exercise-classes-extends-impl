@@ -1,5 +1,9 @@
 import impl.*;
 
+import java.util.Map;
+import java.util.Objects;
+
+
 public class Main {
     public static void main(String[] args) {
 
@@ -14,11 +18,11 @@ public class Main {
         bob.sleeps();
         bob.worksInTeams(5);
         bob.makesTests();
-        System.out.println(bob.isHuman());
+        System.out.println(Constructor.isHuman);
         System.out.println(bob);
         System.out.println(Constructor.isAlive());
-        Constructor.setCountry("Chile");
-        System.out.println(Constructor.getCountry());
+
+
 
         Cooker Pedro = new Cooker("Pedro", "Latino", 34,  500000);
         System.out.println(Pedro.getName());
@@ -31,28 +35,27 @@ public class Main {
         Pedro.sleeps();
         Pedro.worksInTeams(5);
         Pedro.makesTests();
-        System.out.println(Pedro.isHuman());
+        System.out.println(Cooker.isHuman);
         System.out.println(Pedro);
         System.out.println(Cooker.isAlive());
-        Constructor.setCountry("Chile");
-        System.out.println(Cooker.getCountry());
 
-        Developer Adel = new Developer("Adel", "Latino", 34,2000000,false);
-        System.out.println(Adel.getName());
-        System.out.println(Adel.getRace());
-        System.out.println(Adel.getAge());
-        System.out.println(Adel.getSalary());
-        Adel.setSalary(2000000);
-        Adel.eats();
-        Adel.sleeps();
-        Adel.worksInTeams(5);
-        Adel.makesTests();
-        Adel.usesScreen();
-        System.out.println(Adel.isHuman());
-        System.out.println(Adel);
+
+        Developer adel = new Developer("Adel", "Latino", 34,2000000,false);
+        System.out.println(adel.getName());
+        System.out.println(adel.getRace());
+        System.out.println(adel.getAge());
+        System.out.println(adel.getSalary());
+        adel.setSalary(2000000);
+        adel.eats();
+        adel.sleeps();
+        adel.worksInTeams(5);
+        adel.makesTests();
+        adel.usesScreen();
+        System.out.println(Developer.isHuman);
+        System.out.println(adel);
         System.out.println(Developer.isAlive());
-        Constructor.setCountry("Chile");
-        System.out.println(Developer.getCountry());
+        System.out.println();
+
 
         Electrician Andy = new Electrician("Andy", "Latino", 33,500000);
         System.out.println(Andy.getName());
@@ -65,45 +68,65 @@ public class Main {
         Andy.worksInTeams(5);
         Andy.makesTests();
         System.out.println(Andy.isWorksCables());
-        System.out.println(Andy.isHuman());
+        System.out.println(Electrician.isHuman);
         System.out.println(Andy);
         System.out.println(Electrician.isAlive());
-        Constructor.setCountry("Chile");
-        System.out.println(Electrician.getCountry());
 
-        Secretary Gertrudis = new Secretary("Gertrudis", "Latino", 38,580000);
-        System.out.println(Gertrudis.getName());
-        System.out.println(Gertrudis.getRace());
-        System.out.println(Gertrudis.getAge());
-        System.out.println(Gertrudis.getSalary());
-        Gertrudis.setSalary(2000000);
-        Gertrudis.eats();
-        Gertrudis.sleeps();
-        Gertrudis.makesManualJob();
-        Gertrudis.worksInTeams(5);
-        Gertrudis.usesScreen();
-        System.out.println(Gertrudis.isHuman());
-        System.out.println(Gertrudis);
+
+        Secretary gertrudis = new Secretary("Gertrudis", "Latino", 38,580000);
+        System.out.println(gertrudis.getName());
+        System.out.println(gertrudis.getRace());
+        System.out.println(gertrudis.getAge());
+        System.out.println(gertrudis.getSalary());
+        gertrudis.setSalary(2000000);
+        gertrudis.eats();
+        gertrudis.sleeps();
+        gertrudis.makesManualJob();
+        gertrudis.worksInTeams(5);
+        gertrudis.usesScreen();
+        System.out.println(Secretary.isHuman);
+        System.out.println(gertrudis);
         System.out.println(Secretary.isAlive());
-        Constructor.setCountry("Chile");
-        System.out.println(Secretary.getCountry());
 
-        Teacher Monica = new Teacher("Monica", "Latino", 56,690000);
-        System.out.println(Monica.getName());
-        System.out.println(Monica.getRace());
-        System.out.println(Monica.getAge());
-        System.out.println(Monica.getSalary());
-        Monica.setSalary(2000000);
-        Monica.eats();
-        Monica.sleeps();
-        Monica.makesManualJob();
-        Monica.worksInTeams(5);
-        Monica.usesScreen();
-        System.out.println(Monica.isHuman());
-        System.out.println(Monica);
+
+        Teacher monica = new Teacher("Monica", "Latino", 56,690000);
+        System.out.println(monica.getName());
+        System.out.println(monica.getRace());
+        System.out.println(monica.getAge());
+        System.out.println(monica.getSalary());
+        monica.setSalary(2000000);
+        monica.eats();
+        monica.sleeps();
+        monica.makesManualJob();
+        monica.worksInTeams(5);
+        monica.usesScreen();
+        System.out.println(Teacher.isHuman);
+        System.out.println(monica);
         System.out.println(Teacher.isAlive());
-        Constructor.setCountry("Chile");
-        System.out.println(Teacher.getCountry());
+
+
+        System.out.println(Constructor.isHuman);
+        System.out.println(Secretary.isHuman);
+        System.out.println(Constructor.isHuman);
+
+        Map<String, Object> killed = monica.kills(gertrudis);
+        System.out.println(killed);
+
+
+        Map<String, Object> killed2 = bob.kills(adel);
+        System.out.println(killed2);
+
+        boolean soTea = adel.isTea();
+        System.out.println(soTea);
+
+        int richBitchorNot = monica.getSalary();
+        if (richBitchorNot > 2000000 ){
+            System.out.println("no you are not rich");
+        } else {
+            System.out.println("yes you are rich because you earn " + monica.getSalary() +" dollars");
+        }
+
+
 
 
 
